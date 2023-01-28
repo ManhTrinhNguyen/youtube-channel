@@ -1,4 +1,9 @@
+import {apiKey} from "./apiKey.js"
+
+console.log(apiKey)
+
 $(document).ready(() => {
+  
     const submitBtn = $(".submitBtn")
    
     // Fetch Data
@@ -6,7 +11,7 @@ $(document).ready(() => {
     const fetchData = () => {
         
          let query = $("#searchInput").val()
-         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBbtIwT2evvIo19XmO1vKUphn6vjqmdOPQ&channelId=UCqZQlzSHbVJrwrn5XvzrzcA&maxResults=6&q=${query}`
+         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${apiKey}&channelId=UCqZQlzSHbVJrwrn5XvzrzcA&maxResults=6&q=${query}`
          
         fetch(url)
         .then(res => res.json())
