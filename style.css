@@ -46,6 +46,7 @@ body .container .youtube-channel i {
 }
 body .container .searchInput {
   display: flex;
+
   width: 90%;
   margin: 0 auto;
 }
@@ -143,6 +144,15 @@ body .container .no-result-container h2 {
   font-size: 20px;
   font-weight: 400;
 }
+#channel-option {
+  width: 50%;
+  outline: none;
+  height: 57.12px;
+  border: 3px solid #1B4965;
+  font-size: 15px;
+}
+
+
 
 @media screen and (min-width: 768px) {
   body {
@@ -174,6 +184,7 @@ body .container .no-result-container h2 {
   }
   body .container .searchInput {
     display: flex;
+    
     width: 90%;
     margin: 0 auto;
     align-items: center;
@@ -279,6 +290,13 @@ body .container .no-result-container h2 {
   body .container .no-result-container h2 {
     font-size: 20px;
     font-weight: 400;
+  }
+  #channel-option {
+    width: 20%;
+    outline: none;
+    height: 57.12px;
+    border: 3px solid #1B4965;
+    font-size: 15px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -416,5 +434,12 @@ body .container .no-result-container h2 {
   body .container .no-result-container h2 {
     font-size: 20px;
     font-weight: 400;
+  }
+  #channel-option {
+    width: 15%;
+    outline: none;
+    height: 57.12px;
+    border: 3px solid #1B4965;
+    font-size: 15px;
   }
 }/*# sourceMappingURL=style.css.map */

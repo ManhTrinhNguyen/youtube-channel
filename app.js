@@ -3,13 +3,19 @@ import {apiKey} from "./apiKey.js"
 $(document).ready(() => {
   
     const submitBtn = $(".submitBtn")
+
+
    
     // Fetch Data
  
     const fetchData = () => {
-        
-         let query = $("#searchInput").val()
-         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${apiKey}&channelId=UCqZQlzSHbVJrwrn5XvzrzcA&maxResults=6&q=${query}`
+
+        const dataQuery = {
+            query : $("#searchInput").val(),
+            channelId: $("#channel-option").val()
+        }
+
+         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${apiKey}&channelId=${dataQuery.channelId}&maxResults=6&q=${dataQuery.query}`
          
         fetch(url)
         .then(res => res.json())
@@ -17,13 +23,14 @@ $(document).ready(() => {
         .catch(err => console.log(err))
     }
 
-    // Click Submit Btn
+
+     // Click Submit Btn
 
    submitBtn.click((e) => {
     e.preventDefault()
     fetchData()
-    $("#searchInput").val("")
    })
+   
 
 
    // Element function 
@@ -47,7 +54,7 @@ $(document).ready(() => {
    // display function
     const disPlayData = (data) => {
         const dataItems = data.items
-        //console.log(dataItems)
+        console.log(dataItems)
         // Show result condition
         if(dataItems.length === 0) {
             $(".no-result-container").addClass("result-active")
